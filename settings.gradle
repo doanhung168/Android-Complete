@@ -16,3 +16,5 @@ rootProject.name = "AndroidComplete"
 include ':app'
 include ':service'
 include ':multithreading'
+include ':sqlite'
+include ':provider_client'
