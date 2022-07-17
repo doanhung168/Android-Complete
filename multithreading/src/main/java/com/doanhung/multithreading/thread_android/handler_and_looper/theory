@@ -1,0 +1,19 @@
+- Looper is class that used to run a message loop for a thread
+- Threads by default do not have a message loop associated with them. to create one , call prepare()
+in the thread that is to run loop, and then loop() to have it process message until the loop is stopped
+
+- Handler allow you to send and process Message or Runnable object with associated thread's MessageQueue
+ Each Handler instance is associated with a single thread and that thread's message queue.
+ When you create a new Handler it is bound to a Looper.
+ It will deliver messages and runnables to that Looper's message queue
+ and execute them on that Looper's thread.
+
+- Looper create by a new MessageQueue and a thread :
+ private Looper(boolean quitAllowed) {
+        mQueue = new MessageQueue(quitAllowed);
+        mThread = Thread.currentThread();
+    }
+    => looper.quit() => quit the messageQueue;
+
+- HandlerThread has a in-build looper
+

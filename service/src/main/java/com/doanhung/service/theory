@@ -1,0 +1,23 @@
+- Service is one of four major component of Android
+- Service are used to perform long running task in background
+- Service doesn't have UI
+
+                         Auto-restart                   Intent
+START_STICKY               YES                          null Intent
+START_NOT_STICKY           NO                           with intent when started
+START_REDELIVER_INTENT     YES                          Intent
+
+
+                                 Bound Service
+                           |                         |
+                           |                         |
+                     Local Binding            Remote Binding
+                           |                |               |
+                           |                |               |
+                        IBinder          Messenger         AIDL
+
+
+- IntentService uses a worker thread to handle all of the start request, one at a time
+
+Component which can bind to a service are -Activity, Service and Content Provider
+Any number of components can bind to a service

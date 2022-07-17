@@ -1,0 +1,13 @@
+
+- implement Runnable use for create an object
+- extend Thread use for separate and parallel thread
+- Lifecycle : NEW -> RUNNABLE -> RUNNING -> TERMINATED.
+ when thread is blocked by something , it will into NON-RUNNABLE state
+ May be, it can into RUNNABLE again by the way of calling notify or notifyAll
+- join(): the joined thread must run completely, then the original thread can run
+- have 2 type of the thread: daemon Thread and normal thread.
+ To thread become daemon thread, just set setDaemonThread(true)
+
+- Deadlock is a situation in which two or many threads have to wait for each other forever.
+  It is caused by accessing in synchronized method of an object that was locked from each other
+
