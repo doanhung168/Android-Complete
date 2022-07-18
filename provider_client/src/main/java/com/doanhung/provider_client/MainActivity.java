@@ -48,9 +48,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader onCreateLoader(int id, @Nullable Bundle args) {
         if(id == LOADER_ID) {
+            Uri uri = new Uri.Builder()
+                    .scheme("content")
+                    .authority("com.doanhung.sharing_files.provider")
+                    .appendPath(Contract.SECRET)
+                    .build();
+
             return new CursorLoader(
                     this,
-                    Uri.parse("content://com.doanhung.sqlite.provider/list"),
+                    uri,
                     null, null, null, null
                     );
         }
@@ -63,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             cursor.moveToPosition(-1);
             StringBuilder stringBuilder = new StringBuilder();
             while (cursor.moveToNext()) {
-                stringBuilder.append(cursor.getLong(0)).append(" ").append(cursor.getString(1)).append("\n");
+                stringBuilder.append(cursor.getString(0)).append("\n");
             }
             Toast.makeText(getApplicationContext(), stringBuilder, Toast.LENGTH_LONG).show();
         }

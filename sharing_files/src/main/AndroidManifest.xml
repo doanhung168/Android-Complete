@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.doanhung.provider_client">
-
-    <queries>
-        <package android:name="com.doanhung.sqlite"/>
-        <package android:name="com.doanhung.sharing_files"/>
-    </queries>
+    package="com.doanhung.sharing_files">
 
     <application
         android:allowBackup="true"
@@ -23,6 +18,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".SharedPreferencesContentProvider"
+            android:authorities="com.doanhung.sharing_files.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:multiprocess="true"
+            android:syncable="true" />
+
+
     </application>
 
 </manifest>
